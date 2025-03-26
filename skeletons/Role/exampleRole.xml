@@ -1,0 +1,35 @@
+<Skeleton>
+
+  <Type>Role</Type>
+  
+  <Roles>
+    <Role>
+      <!-- the only necessary properties for the program to work correctly is RoleName -->
+      <!-- the rest can be omitted for default values, which are as follows -->
+      <!-- 
+        RoleColor: #adadad
+        Mentionable: true
+        Hoist: false
+        Permissions {Allow: 0}
+      -->
+      <!-- The name of the role (should be unique) -->
+      <RoleName>Admin</RoleName>
+      
+      <!-- The color of the role, specified as a hexadecimal value -->
+      <RoleColor>#FF0000</RoleColor>
+      
+      <!-- Whether the role is mentionable by users -->
+      <Mentionable>false</Mentionable>
+      
+      <!-- Whether the role should be displayed separately from other roles -->
+      <Hoist>true</Hoist>
+      
+      <!-- A list of permissions granted to the role -->
+      <Permissions>
+        <!-- Bitwise permission values can be calculated to represent multiple permissions -->
+        <Allow>8</Allow>
+        <!-- Add other permissions as needed -->
+      </Permissions>
+    </Role>
+  </Roles>
+</Skeleton>

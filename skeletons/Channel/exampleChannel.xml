@@ -1,0 +1,100 @@
+<Skeleton>
+  
+  <Type>
+    channel
+  </Type>
+
+  <Channels> 
+  <!-- all properties in Channel aside from ChannelName and ChannelType can be omitted for default values -->
+  <!-- this goes for all ChannelType variants -->
+    <Channel>
+      <!-- should be unique for proper permission setting -->
+      <ChannelName>Cat1</ChannelName>
+      
+      <!-- The type of channel, can be 'text', 'voice', or 'category' -->
+      <!-- you must place categories first in XML hierarchy so that IDs can be found 
+           when creating child channels later -->
+      <ChannelType>Category</ChannelType>
+      
+      <!-- A list of permission overwrites for roles or users -->
+      <!-- can be omitted entirely if syncing permissions (text, voice channels) or no permissions required -->
+      <PermissionOverwrites>
+        <!-- An example of a permission overwrite for a specific role -->
+        <Overwrite>
+          <Name>Admin</Name> <!-- used to match Role by name.
+                                if ID is present and not '0',
+                                or Type is not 'Role' 
+                                this will be ignored.
+                                
+                                *note: in order for this to work correctly, all roles have to be created beforehand* -->
+          <Type>Role</Type> 
+          <!-- allow/deny can be 0 or omitted -->
+          <Allow>0</Allow> <!-- bitwise -->
+          <Deny>67584</Deny> <!-- bitwise -->
+        </Overwrite>
+        <!-- An example of a permission overwrite for default role (usually @everyone) -->
+        <Overwrite>
+          <!-- ID can be '0' or omitted -->
+          <!-- Name can be 'everyone' or omitted -->
+          <Name>everyone</Name>
+          <Type>Role</Type>
+          <Deny>67584</Deny>
+        </Overwrite>
+        <!-- An example of a permission overwrite for a specific user ID -->
+        <Overwrite>
+          <ID>1274422359800938628</ID>
+          <Type>Member</Type> 
+          <Allow>67584</Allow>
+          <Deny>0</Deny>
+        </Overwrite>
+      </PermissionOverwrites>
+    </Channel>
+
+    <Channel>
+      <!-- should be unique for proper permission setting -->
+      <ChannelName>Channel1</ChannelName>
+      
+      <!-- The type of channel: 'text', 'voice', or 'category' -->
+      <ChannelType>text</ChannelType>
+
+      <!-- The channel's topic, only applicable for text channels-->
+      <ChannelTopic>This is a general discussion channel.</ChannelTopic>
+      
+      <!-- The name of the category the channel belongs to, if any -->
+      <!-- *will be matched to first matching category name, top-to-bottom -->
+      <!-- omit or enter 0 for no category -->
+      <Category>Cat1</Category>
+      
+      <!-- Whether the channel is NSFW (Not Safe For Work) -->
+      <NSFW>false</NSFW>
+
+      <!-- Whether this channel should be synced with the parent category's permissions -->
+      <SyncPermissions>true</SyncPermissions>
+
+      <!-- Rate limit per user in seconds (slowmode) for text channels -->
+      <RateLimitPerUser>5</RateLimitPerUser>
+
+    </Channel>
+
+    <Channel>
+      <!-- should be unique for proper permission setting -->
+      <ChannelName>Channel2</ChannelName>
+      
+      <ChannelType>voice</ChannelType>
+
+      <!-- can be omitted or 0 for no category -->
+      <Category>0</Category>
+    
+      <!-- The bitrate for voice channels  -->
+      <Bitrate>64000</Bitrate>
+      
+      <!-- The user limit for voice channels  -->
+      <UserLimit>5</UserLimit>
+      
+      <!-- Whether this channel should be synced with the parent category's permissions -->
+      <SyncPermissions>false</SyncPermissions>
+      
+    </Channel>
+    
+  </Channels>
+</Skeleton>

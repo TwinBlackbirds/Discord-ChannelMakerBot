@@ -1,0 +1,6 @@
+loc_counter.py
+log.txt
+.venv
+attachments
+models/__pycache__
+.env
